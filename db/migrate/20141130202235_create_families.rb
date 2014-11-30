@@ -3,10 +3,9 @@ class CreateFamilies < ActiveRecord::Migration
     create_table :families do |t|
       t.string :surname
       t.string :phone_home
-      t.string :family_phone_home
-      t.string :family_phone_cell
-      t.string :family_email
-      t.string :family_mailing_address
+      t.string :phone_cell
+      t.string :email
+      t.string :mailing_address
 
       t.timestamps
     end
