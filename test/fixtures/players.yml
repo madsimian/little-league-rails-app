@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  player_fname: MyString
+  player_lname: MyString
+  player_nickname: MyString
+  player_birthday: 2014-11-30
+  team: 
+
+two:
+  player_fname: MyString
+  player_lname: MyString
+  player_nickname: MyString
+  player_birthday: 2014-11-30
+  team: 
