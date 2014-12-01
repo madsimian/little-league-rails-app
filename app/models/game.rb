@@ -8,7 +8,7 @@
 
 class Game < ActiveRecord::Base
   has_many :matchups
-  has_many :teams, :through => :matchup
-  has_one :team
-  validates :team, :location, :date, :presence => true
+  has_many :teams, :through => :matchups
+  belongs_to :team
+  validates :location, :date, :presence => true
 end

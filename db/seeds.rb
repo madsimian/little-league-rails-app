@@ -80,7 +80,6 @@ GAMES.times do
                      :date => 2.years.ago.advance(:days => (rand(730) - 1)))
 
   teams = Team.all
-
   teams.sample(2).each do |team|
     Matchup.create(:game => game,
                    :team => team,
@@ -88,7 +87,11 @@ GAMES.times do
   end
 
   # winning team
-  game.team = game.matchups.order(:score).first
+  winner = game.matchups.order(:score => :desc).first
+  game.team = winner.team
+  statuses = ["home","away"].shuffle
+  game.matchups[0].status = statuses.first
+  game.matchups[1].status = statuses.last
   game.save
   
 end
