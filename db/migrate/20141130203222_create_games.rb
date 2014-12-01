@@ -3,7 +3,7 @@ class CreateGames < ActiveRecord::Migration
     create_table :games do |t|
       t.string :location
       t.date :date
-      t.reference :team
+      t.references :team
 
       t.timestamps
     end

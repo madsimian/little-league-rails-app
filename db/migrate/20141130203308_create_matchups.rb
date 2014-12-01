@@ -1,10 +1,10 @@
 class CreateMatchups < ActiveRecord::Migration
   def change
     create_table :matchups do |t|
-      t.reference :team
-      t.reference :game
-      t.int :score
-      t.int :status
+      t.references :team
+      t.references :game
+      t.integer :score
+      t.integer :status
 
       t.timestamps
     end

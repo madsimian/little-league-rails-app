@@ -4,8 +4,7 @@ class CreateCoaches < ActiveRecord::Migration
       t.string :fname
       t.string :lname
       t.date :birthday
-      t.reference :family
-
+      t.references :family
       t.timestamps
     end
   end

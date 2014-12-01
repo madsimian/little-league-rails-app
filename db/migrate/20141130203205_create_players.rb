@@ -5,8 +5,8 @@ class CreatePlayers < ActiveRecord::Migration
       t.string :lname
       t.string :nickname
       t.date :birthday
-      t.reference :team
-      t.reference :family
+      t.references :team
+      t.references :family
       t.timestamps
     end
   end
