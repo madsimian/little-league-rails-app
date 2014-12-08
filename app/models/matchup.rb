@@ -12,4 +12,6 @@ class Matchup < ActiveRecord::Base
   belongs_to :team
   enum :status => [:home, :away]
   validates :team, :game, :presence => true
+
+
 end

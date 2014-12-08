@@ -8,7 +8,16 @@
 
 class Game < ActiveRecord::Base
   has_many :matchups
-  has_many :teams, :through => :matchups
+  has_many :teams, -> {select("teams.*, matchups.score")}, :through => :matchups
   belongs_to :team
   validates :location, :date, :presence => true
+
+  def winner
+  	teams.sort_by {|t| t.score }.reverse.first
+  end
+
+  def loser
+  	teams.sort_by {|t| t.score }.reverse.last
+  end
+
 end
